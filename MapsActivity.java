@@ -135,6 +135,23 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 Toast.makeText(MapsActivity.this,"Nearby Hospitals", Toast.LENGTH_LONG).show();
             }
         });
+        Button btnATM = (Button) findViewById(R.id.btnATM);
+        btnHospital.setOnClickListener(new View.OnClickListener() {
+            String Hospital = "ATM";
+            @Override
+            public void onClick(View v) {
+                Log.d("onClick", "Button is Clicked");
+                mMap.clear();
+                String url = getUrl(latitude, longitude, Hospital);
+                Object[] DataTransfer = new Object[2];
+                DataTransfer[0] = mMap;
+                DataTransfer[1] = url;
+                Log.d("onClick", url);
+                GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
+                getNearbyPlacesData.execute(DataTransfer);
+                Toast.makeText(MapsActivity.this,"Nearby ATMS", Toast.LENGTH_LONG).show();
+            }
+        });
 
 
     }
