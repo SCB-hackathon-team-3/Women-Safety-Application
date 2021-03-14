@@ -30,7 +30,7 @@ ArrayList<String> al1,al2;
 		e1=(EditText) findViewById(R.id.editText1);
 		e2=(EditText) findViewById(R.id.editText2);
 		al1=new ArrayList<String>();
-		al2=new ArrayList<String>();
+		al2=new ArrayList<String>(); 
 		b1.setOnClickListener(new OnClickListener() {
 			
 			@Override
