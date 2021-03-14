@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">GMailSender</string>
+    <string name="app_name">SafeStree</string>
+    <string name="title_activity_contactlistphn">Contactlistphn</string>
+    <string name="title_activity_contactfragment">Contactfragment</string>
 </resources>
