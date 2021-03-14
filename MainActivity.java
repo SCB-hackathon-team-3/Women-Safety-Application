@@ -1,39 +1,29 @@
-package com.womensafety.SafeStree;
+package com.womensafety.safestree;
 
+import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.os.Handler;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-	}
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
+        setContentView(R.layout.activity_main);
+        new Handler( ).postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if(MainActivity.this==null){
+                    return;
+                }
+                Intent intent=new Intent(getApplicationContext(),Main2Activity.class);
 
-	
-	public void register(View v) {
-		Intent i_register=new Intent(MainActivity.this,Register.class);
-		startActivity(i_register);
-		
-	}
-	
-public void display_no(View v) {
-	Intent i_view=new Intent(MainActivity.this,Display.class);
-	startActivity(i_view);
-		
-	}
-
-public void instruct(View v) {	
-	Intent i_help=new Intent(MainActivity.this,Instructions.class);
-    startActivity(i_help);
-}
-
-public void verify(View v) {	
-	Intent i_verify=new Intent(MainActivity.this,Verify.class);
-    startActivity(i_verify);
-}
+                        startActivity(intent);
+                        finish();
+            }
+        },3000);
+    }
 }
